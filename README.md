@@ -78,4 +78,5 @@ A responsive **Weather App** that allows users to get live weather information f
 ## Author ✨
 Ayesha Kanwal
 Internship Project - Internee.pk 2025
->>>>>>> 2c1bba1 ( weather project)
+
+
