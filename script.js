@@ -1,4 +1,4 @@
-const WEATHER_API_KEY = "c13983238e745e123d9f69cffdfa7f8e"; // Replace with your OpenWeatherMap API key
+const WEATHER_API_KEY = "c13983238e745e123d9f69cffdfa7f8e"; //  OpenWeatherMap API key
 
 let appState = {
   tempCelsius: null,
@@ -121,7 +121,7 @@ function getWeatherIcon(condition) {
   return "⛅";
 }
 
-// Update background based on weather
+
 function updateBackground(condition) {
   const c = (condition || "").toLowerCase();
   let bgUrl = "";
@@ -142,7 +142,11 @@ function startClock(offsetSec) {
   const updateClock = () => {
     const utc = Date.now() + new Date().getTimezoneOffset()*60000;
     const cityTime = new Date(utc + offsetSec*1000);
-    DOM.clock.textContent = `${String(cityTime.getHours()).padStart(2,'0')}:${String(cityTime.getMinutes()).padStart(2,'0')}`;
+    DOM.clock.textContent = `${
+        String(cityTime.getHours()).padStart(2,'0')
+    }
+     :${
+        String(cityTime.getMinutes()).padStart(2,'0')}`;
   };
   updateClock();
   appState.clockInterval = setInterval(updateClock, 60000);
@@ -161,4 +165,6 @@ function showError(msg) {
 }
 
 // Capitalize first letter
-function capitalize(str="") { return str.charAt(0).toUpperCase() + str.slice(1); }
+function capitalize(str="") { 
+    return str.charAt(0).toUpperCase() + str.slice(1);
+ }
