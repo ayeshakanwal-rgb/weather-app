@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Weather App</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <!-- Background container -->
+  <div id="bgContainer" aria-hidden="true"></div>
+
+  <!-- Header with toggles and clock -->
+  <header class="header-bar">
+    <div class="controls">
+      <!-- Dark / Light mode toggle -->
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle" />
+        <span class="slider"></span>
+        Dark
+      </label>
+
+      <!-- Temperature unit toggle -->
+      <label class="switch">
+        <input type="checkbox" id="tempUnitToggle" />
+        <span class="slider"></span>
+        °C / °F
+      </label>
+
+      <!-- City local time -->
+      <div class="city-clock" id="cityTime">--:--</div>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="main-container">
+    <h1>Weather App</h1>
+
+    <!-- Search bar -->
+    <div class="search-bar">
+      <input type="text" id="cityField" placeholder="Enter city..." />
+      <button id="searchBtn">Search</button>
+      <button id="geoBtn">Current Location</button>
+    </div>
+
+    <!-- Weather card / display -->
+    <div class="weather-display hidden" id="weatherDisplay">
+      <div class="weather-top">
+        <div id="weatherIcon">⛅</div>
+        <h2 id="locationName">—</h2>
+      </div>
+      <div class="weather-stats">
+        <div class="temperature">
+          <span id="tempValue">—</span><span id="tempUnit">°C</span>
+        </div>
+        <div class="other-info">
+          <p>Humidity: <span id="humidityVal">—</span>%</p>
+          <p>Condition: <span id="conditionDesc">—</span></p>
+        </div>
+      </div>
+      <p id="weatherError" class="error-msg" hidden></p>
+    </div>
+  </main>
+
+  <!-- Footer fixed at bottom -->
+  <footer class="footer-bar">
+    <p>© 2025 Ayesha Kanwal</p>
+  </footer>
+
+  <!-- Script -->
+  <script src="script.js" defer></script>
+</body>
+</html>
